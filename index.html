@@ -260,11 +260,12 @@
 
     <script>
         document.querySelectorAll('.gif').forEach(gif => {
+            let originalSrc = gif.src;
             gif.addEventListener('mouseenter', () => {
-                gif.src = gif.src; // Reloads the gif, triggering the animation
+                gif.src = originalSrc;
             });
             gif.addEventListener('mouseleave', () => {
-                gif.src = ''; // Pauses the gif
+                gif.src = originalSrc;
             });
         });
     </script>
