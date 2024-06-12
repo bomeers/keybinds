@@ -24,10 +24,6 @@
             background-color: #39384e;
         }
 
-        .card:hover .gif {
-            animation-play-state: running;
-        }
-
         .text {
             flex: 1;
             text-align: center;
@@ -261,6 +257,17 @@
             <img class="gif" src="gifs/17.gif" alt="GIF">
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.gif').forEach(gif => {
+            gif.addEventListener('mouseenter', () => {
+                gif.src = gif.src; // Reloads the gif, triggering the animation
+            });
+            gif.addEventListener('mouseleave', () => {
+                gif.src = ''; // Pauses the gif
+            });
+        });
+    </script>
 </body>
 
 </html>
